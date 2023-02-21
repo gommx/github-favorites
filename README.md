@@ -1,4 +1,4 @@
-# Documentação do código
+# Github Favorites
 
 Esta aplicação é um gerenciador de favoritos de usuários do GitHub. Ele permite que o usuário adicione nomes de usuário do GitHub à lista de favoritos, remova usuários da lista e visualize informações básicas sobre cada usuário, como o nome, a quantidade de repositórios públicos e a quantidade de seguidores. Os usuários favoritados são armazenados localmente e exibidos em uma lista na interface do usuário.
 

@@ -12,20 +12,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <script src="js/main.js" type="module" defer></script>
-
+    <script src="https://kit.fontawesome.com/481898e1cb.js" crossorigin="anonymous"></script>
     <title>Github Favorites</title>
   </head>
   <body>
-    <header>
-      <h1 class="title">Github Favorites</h1>
-      <div class="search-container">
-        <div class="search">
-          <input class="search-input" type="search" placeholder="Usuário do Github" />
-          <img class="addUser" src="image/plus.svg" alt="" />
+    <main>
+      <section>
+        <header>
+          <h1 class="title">Github Favorites</h1>
+          <div class="search-container">
+            <div class="search">
+              <input class="search-input" type="search" placeholder="Usuário do Github" />
+              <img class="addUser" src="image/plus.svg" alt="" />
+            </div>
+            <p class="error-message"></p>
+          </div>
+        </header>
+        <div id="app"></div>
+      </section>
+      <aside>
+        <h1 class="trend-title">Trending</h1>
+        <div class="repository">
+          <div class="repo-info">
+            <a class="repo-name" href="https://github.com/lllyasviel/ControlNet" target="_blank">ControlNet</a>
+            <a class="owner-login" href="https://github.com/lllyasviel" target="_blank">lllyasviel</a>
+            <p class="stars"><strong>6188</strong> stars</p>
+            <p class="forks_count"><strong>471</strong> forks</p>
+          </div>
         </div>
-        <p class="error-message"></p>
-      </div>
-    </header>
-    <main id="app"></main>
+      </aside>
+    </main>
   </body>
 </html>

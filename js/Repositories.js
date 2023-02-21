@@ -19,6 +19,8 @@ export class Repositories {
         };
       })
     );
+
+    console.log(repositories);
     return repositories;
   }
 }

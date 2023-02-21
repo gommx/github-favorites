@@ -3,7 +3,7 @@ export class Repositories {
     const endpoint = `https://api.github.com/search/repositories?q=created:>2023-01-20&sort=stars&order=desc&per_page=5`;
 
     const response = await fetch(endpoint);
-
+    
     const repositories = await response.json().then((repositories) =>
       repositories.items.map((repository) => {
         return {

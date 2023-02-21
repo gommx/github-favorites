@@ -1,12 +1,25 @@
 # Documentação do código
 
-Este é um conjunto de arquivos JavaScript que implementam uma pequena aplicação de favoritos do Github. Com esta aplicação, é possível pesquisar e adicionar usuários do Github aos seus favoritos. Os usuários favoritados são armazenados localmente e exibidos em uma lista na interface do usuário.
+Esta aplicação é um gerenciador de favoritos de usuários do GitHub. Ele permite que o usuário adicione nomes de usuário do GitHub à lista de favoritos, remova usuários da lista e visualize informações básicas sobre cada usuário, como o nome, a quantidade de repositórios públicos e a quantidade de seguidores. Os usuários favoritados são armazenados localmente e exibidos em uma lista na interface do usuário.
+
+## Pontos principais do projeto
+
+- Utilização da API do Github para buscar informações de usuários.
+- Uso de `Promises` e `async/await` para realizar chamadas assíncronas à API do Github.
+- Manipulação do armazenamento local do navegador (`localStorage`) para salvar e recuperar a lista de usuários favoritos;
+- Uso de `classes` e `herança` no JavaScript para criar objetos e compartilhar comportamentos;
+- Implementação de duas classes, `Favorites` e `FavoritesView`, que trabalham juntas para adicionar, remover, armazenar, recuperar e exibir os usuários favoritos.
+- Manipulação do `DOM` para exibir e atualizar a lista de favoritos na página.
+- Uso de eventos do navegador (como `click` e `keydown`) para adicionar usuários favoritos e interagir com a interface.
+- Tratamento de erros ao adicionar usuários favoritos, com mensagens de alerta personalizadas.
+- Utilização do padrão de módulos do JavaScript (`ES6 modules`).
+- Implementação de uma interface gráfica simples, mas funcional, que permite adicionar e remover usuários favoritos.
 
 ## Arquivos
 
 `index.html`
 
-Este é o arquivo HTML principal da aplicação. Ele inclui os arquivos JavaScript necessários e fornece um ponto de entrada para a aplicação.
+Este é o arquivo HTML principal da aplicação. Ele inclui links para fontes externas (Google Fonts), meta tags, links para folhas de estilo e scripts, e também contém o conteúdo da página, incluindo um cabeçalho e um conteúdo principal. O cabeçalho contém um título e um campo de pesquisa, enquanto o conteúdo principal contém a seção principal do site onde os resultados da pesquisa serão exibidos.
 
 `style.css`
 

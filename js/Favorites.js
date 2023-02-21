@@ -3,6 +3,7 @@ import { GithubUser } from "./GithubUser.js";
 export class Favorites {
   constructor(root) {
     this.root = document.querySelector(root);
+    this.errorMessage = document.querySelector(".error-message");
     this.load();
   }
 
@@ -16,18 +17,25 @@ export class Favorites {
 
   async addUser(username) {
     try {
+      this.errorMessage.textContent = "";
+
+      if (!username.trim()) {
+        this.errorMessage.textContent = "O campo de usuário está vazio.";
+        return;
+      }
+
       const user = await GithubUser.search(username);
 
       const duplicateUser = this.entries.find((entry) => user.login === entry.login);
 
       if (duplicateUser) {
-        throw new Error("O usuário já está na lista de favoritos.");
+        this.errorMessage.textContent = "O usuário já está na lista de favoritos.";
+        return;
       }
 
       if (user.login === undefined) {
-        throw new Error(
-          `O usuário '${username}' não foi encontrado. Por favor, verifique o nome de usuário e tente novamente.`
-        );
+        this.errorMessage.textContent = `O usuário não foi encontrado`;
+        return;
       }
 
       this.entries = [user, ...this.entries];
@@ -76,6 +84,10 @@ export class FavoritesView extends Favorites {
       if (event.key === "Enter") {
         handleAddUser();
       }
+    });
+
+    searchInput.addEventListener("keydown", () => {
+      this.errorMessage.textContent = "";
     });
   }
 

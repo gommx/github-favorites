@@ -23,6 +23,10 @@ body {
   margin: 4rem auto;
 }
 
+.search-container {
+  position: relative;
+}
+
 .search {
   position: relative;
   display: flex;
@@ -75,6 +79,15 @@ input::-webkit-search-decoration {
 .search img:hover {
   width: 3.5rem;
   height: 3.5rem;
+}
+
+.search-container .error-message {
+  color: #ff4141;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 1rem;
+  position: absolute;
+  width: 100%;
 }
 
 .users-container {

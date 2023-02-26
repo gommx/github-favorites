@@ -11,6 +11,25 @@ export class Favorites {
     this.entries = JSON.parse(localStorage.getItem("@github-favorites:")) || [];
   }
 
+  updateUser() {
+    const promises = this.entries.map((entry) => GithubUser.search(entry.login));
+
+    Promise.all(promises)
+      .then((results) => {
+        results.forEach((result, index) => {
+          const { public_repos, followers } = result;
+          this.entries[index].public_repos = public_repos;
+          this.entries[index].followers = followers;
+        });
+
+        localStorage.setItem("@github-favorites:", JSON.stringify(this.entries));
+        this.update();
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+
   save() {
     localStorage.setItem("@github-favorites:", JSON.stringify(this.entries));
   }
@@ -64,9 +83,8 @@ export class FavoritesView extends Favorites {
     this.container.classList.add("users-container");
 
     this.root.appendChild(this.container);
-
-    this.update();
     this.onAdd();
+    this.updateUser();
   }
 
   onAdd() {
